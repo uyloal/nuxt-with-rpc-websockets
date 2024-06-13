@@ -9,14 +9,14 @@ export default defineEventHandler({
     return "Hello Nitro";
   },
   websocket: {
-    open: () => {
-      // wsServer.
+    open: (event) => {
+      console.log("open");
     },
-    close: () => {
-      wsServer.close();
+    close: (event) => {
+      console.log("close");
     },
     message: (event) => {
-      // wsServer.
+      console.log("message", event);
     },
   },
 });
